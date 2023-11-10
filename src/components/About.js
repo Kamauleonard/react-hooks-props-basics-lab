@@ -1,17 +1,15 @@
 import React from "react";
+import user from "../data/user";
 import Links from "./Links";
-
 function About(props) {
-  const { bio } = props;
-
   return (
     <div id="about">
-      <h2>About Me</h2>
-      {bio && bio.trim() !== "" ? <p>{bio}</p> : null}
+      {props.bio && props.bio.trim() !== "" && <p>{props.bio}</p>}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      <Links />
+      <Links linkedin={user.links.linkedin} github={user.links.github}/> 
     </div>
   );
 }
+
 
 export default About;
